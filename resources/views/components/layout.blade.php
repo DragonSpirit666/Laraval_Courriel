@@ -13,6 +13,6 @@
     <h1 class="text-3xl mb-2 font-blod underline">{{ $titre }}</h1>
 @endisset
 {{ $slot }}
-
+<p>Justin Morand et Zachary Deschênes-Tremblay</p>
 </body>
 </html>

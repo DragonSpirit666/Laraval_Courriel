@@ -14,5 +14,6 @@
     <h1>{{ $titre }}</h1>
 @endisset
 {{ $slot }}
+<p>Justin Morand et Zachary Deschênes-Tremblay</p>
 </body>
 </html>

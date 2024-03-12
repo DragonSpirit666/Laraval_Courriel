@@ -18,7 +18,8 @@ class CourrielFactory extends Factory
     public function definition(): array
     {
         return [
-            'titre' => Str::random(10)
-            , 'contenu' => Str::random(50)];
+            'titre' => Str::random(10),
+            'contenu' => Str::random(50),
+            'lu' => $this->faker->boolean,];
     }
 }

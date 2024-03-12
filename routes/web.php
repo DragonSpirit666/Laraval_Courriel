@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/courriels', function () {
-    return view('courriels.index');
+    $courriels = App\Models\Courriel::all();
+    return view('courriels.index',  ['courriels' => $courriels]);
+});
+
+Route::get('/courriels/{id}', function ($id) {
+    $courriel = App\Models\Courriel::find($id);
+    return view('courriels.show', ['courriel' => $courriel]);
 });

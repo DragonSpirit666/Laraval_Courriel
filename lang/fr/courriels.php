@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'salutation' => 'Bonjour,',
+    'titre' => 'Courriels',
     ];

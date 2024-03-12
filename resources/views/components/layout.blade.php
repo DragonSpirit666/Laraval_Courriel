@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<head class="px-10">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{__('layout.titre')}}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-sky-400 p-8">
-
+<body>
+<x-header>
+</x-header>
 @isset($titre)
-    <h1 class="text-3xl mb-2 font-blod underline">{{ $titre }}</h1>
+    <h1>{{ $titre }}</h1>
 @endisset
 {{ $slot }}
-
 </body>
 </html>

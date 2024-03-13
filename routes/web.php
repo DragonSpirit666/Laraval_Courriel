@@ -26,6 +26,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Route pour afficher les courriels.
+ *
+ * URL: /courriels
+ * Méthode: GET
+ *
+ * @return View
+ */
 Route::get('/courriels', [CourrielController::class, 'index']);
 
 /**

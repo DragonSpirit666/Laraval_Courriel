@@ -7,9 +7,9 @@
                     <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">{{ __('courriels.titre') }}</h5>
                 </div>
                 <div class="flow-root">
-                    <a href="{{ url('/courriels') }}" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">{{__('courriels.afficher')}}</a>
-                    <a href="{{ url('/courriels?status=0') }}" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">{{__('courriels.afficher_lus')}}</a>
-                    <a href="{{ url('/courriels?status=1') }}" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">{{__('courriels.afficher_non_lus')}}</a>
+                    <a href="{{ url('/courriels') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{__('courriels.afficher')}}</a>
+                    <a href="{{ url('/courriels?status=0') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{__('courriels.afficher_lus')}}</a>
+                    <a href="{{ url('/courriels?status=1') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{__('courriels.afficher_non_lus')}}</a>
 
                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                         @foreach ($courriels as $courriel)

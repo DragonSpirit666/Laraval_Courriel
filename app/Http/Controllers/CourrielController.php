@@ -48,10 +48,16 @@ class CourrielController extends Controller
         return view('courriels.show', ['courriel' => $courriel]);
     }
 
+    /**
+     * Change le statut d'un courriel pour le marquer comme lu ou non.
+     *
+     * @param int $id
+     * @return View
+     */
     public function update($id): RedirectResponse
     {
         $courriel = Courriel::find($id);
-        $courriel->update(['lu' => 1]);
+        $courriel->update(['lu' => !$courriel->lu]);
         return redirect()->route('courriels.show', ['courriel' => $courriel]);
     }
 }

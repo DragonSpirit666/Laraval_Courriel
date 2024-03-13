@@ -10,11 +10,21 @@
             <p class="mb-3 font-normal text-gray-500 dark:text-gray-500">
                 <span class="font-bold">{{ __('courriels.date') }} : </span>{{ $courriel->created_at->isoFormat('LLLL') }}
             </p>
-                <form method="post" action="{{ route('courriels.update', $courriel->id) }}" class="flex items-center mt-6 space-y-6">
+                <form method="post" action="{{ route('courriels.update', $courriel->id) }}" class="flex items-center">
                     @csrf
-                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Mettre lu</button>
+                    <button type="submit" class="text-white bg-gray-900 hover:bg-gray-700
+                        font-medium rounded-lg text-sm px-5 py-2.5">
+                        @if($courriel->lu)
+                            {{__('courriels.mettre_non_lu')}}
+                        @else
+                            {{__('courriels.mettre_lu')}}
+                        @endif
+                    </button>
                 </form>
-            <a href="{{ URL::previous() }}" class="text-gray-300 hover:text-gray-400">Retour</a>
+            <a href="{{ url('/courriels') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700
+                        font-medium rounded-lg text-sm px-4 py-2 mt-4">
+                {{__('courriels.retour')}}
+            </a>
         </div>
     </div>
 </x-layout>

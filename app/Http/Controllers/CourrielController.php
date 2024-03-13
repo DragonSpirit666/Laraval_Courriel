@@ -51,7 +51,7 @@ class CourrielController extends Controller
     public function update($id): RedirectResponse
     {
         $courriel = Courriel::find($id);
-        $courriel->update("lu", 1);
+        $courriel->update(['lu' => 1]);
         return redirect()->route('courriels.show', ['courriel' => $courriel]);
     }
 }

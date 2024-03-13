@@ -37,4 +37,8 @@ class Courriel extends Model
     {
         return static::where('lu', false)->get();
     }
+
+    protected $fillable = [
+        'lu',
+    ];
 }

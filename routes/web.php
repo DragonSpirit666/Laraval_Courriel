@@ -23,11 +23,4 @@ Route::get('/courriels', function () {
     return view('courriels.index',  ['courriels' => $courriels]);
 });
 
-Route::get('/courriels/{id}', function ($id) {
-    $courriel = App\Models\Courriel::find($id);
-    return view('courriels.show', ['courriel' => $courriel]);
-});
-
-Route::get('/courriels', [CourrielController::class, 'index']);
-
 Route::get('/courriels/{courriel}', [CourrielController::class, 'show'])->name('courriels.show');

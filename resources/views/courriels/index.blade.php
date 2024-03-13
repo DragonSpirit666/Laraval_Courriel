@@ -27,6 +27,11 @@
                                             {{ substr($courriel->contenu, 0, 30) . '...'}}
                                         </p>
                                     </div>
+                                    <div class="flex-1 min-w-0 ms-4">
+                                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            {{ $courriel->envoyeur }}
+                                        </p>
+                                    </div>
                                     <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                         {{ $courriel->created_at->diffForHumans() }}
                                     </div>

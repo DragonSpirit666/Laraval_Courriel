@@ -8,4 +8,5 @@ return [
         'company' => 'Cstjean™'
     ],
     'accueil' => 'Accueil',
+    'retour' => 'Retour',
 ];

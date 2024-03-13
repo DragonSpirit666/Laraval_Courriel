@@ -27,18 +27,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/courriels', function () {
-    $courriels = App\Models\Courriel::all();
-    return view('courriels.index',  ['courriels' => $courriels]);
-});
-
-Route::post('/courriels/{id}', [CourrielController::class, 'update'])->name('courriels.update');
-
-Route::get('/courriels/{id}', function ($id) {
-    $courriel = App\Models\Courriel::find($id);
-    return view('courriels.show', ['courriel' => $courriel]);
-});
-
 /**
  * Route pour afficher les courriels.
  *
@@ -59,3 +47,11 @@ Route::get('/courriels', [CourrielController::class, 'index']);
  * @return View
  */
 Route::get('/courriels/{courriel}', [CourrielController::class, 'show'])->name('courriels.show');
+
+/**
+ * Route pour update le status lu des courriels.
+ *
+ * URL: /
+ * Méthode: post
+ */
+Route::post('/courriels/{id}', [CourrielController::class, 'update'])->name('courriels.update');

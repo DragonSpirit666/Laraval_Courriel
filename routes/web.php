@@ -35,10 +35,7 @@ Route::get('/', function () {
  *
  * @return View
  */
-Route::get('/courriels', function () {
-    $courriels = App\Models\Courriel::all();
-    return view('courriels.index',  ['courriels' => $courriels]);
-});
+Route::get('/courriels', [CourrielController::class, 'index']);
 
 /**
  * Route pour afficher un courriel spécifique.

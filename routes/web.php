@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourrielController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\View\View;
 
 /*
 |--------------------------------------------------------------------------

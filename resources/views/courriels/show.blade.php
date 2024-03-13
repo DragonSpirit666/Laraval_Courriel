@@ -10,11 +10,11 @@
             <p class="mb-3 font-normal text-gray-500 dark:text-gray-500">
                 <span class="font-bold">Date: </span>{{ $courriel->created_at->isoFormat('LLLL') }}
             </p>
-            <div class="flex items-center">
-                <input @if($courriel->lu) checked @endif id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Lu</label>
-            </div>
-            <a href="{{ URL::previous() }}" class="text-gray-300">Retour</a>
+                <form method="post" action="{{ route('courriels.update', $courriel->id) }}" class="flex items-center mt-6 space-y-6">
+                    @csrf
+                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Mettre lu</button>
+                </form>
+            <a href="{{ URL::previous() }}" class="text-gray-300 hover:text-gray-400">Retour</a>
         </div>
     </div>
 </x-layout>

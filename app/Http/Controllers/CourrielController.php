@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courriel;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -27,5 +28,12 @@ class CourrielController extends Controller
     {
         $courriel = Courriel::find($id);
         return view('courriels.show', ['courriel' => $courriel]);
+    }
+
+    public function update($id): RedirectResponse
+    {
+        $courriel = Courriel::find($id);
+        $courriel->update("lu", 1);
+        return redirect()->route('courriels.show', ['courriel' => $courriel]);
     }
 }

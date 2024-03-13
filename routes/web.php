@@ -23,6 +23,8 @@ Route::get('/courriels', function () {
     return view('courriels.index',  ['courriels' => $courriels]);
 });
 
+Route::post('/courriels/{id}', [CourrielController::class, 'update'])->name('courriels.update');
+
 Route::get('/courriels/{id}', function ($id) {
     $courriel = App\Models\Courriel::find($id);
     return view('courriels.show', ['courriel' => $courriel]);

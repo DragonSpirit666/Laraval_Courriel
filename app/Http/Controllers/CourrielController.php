@@ -8,9 +8,19 @@ use Illuminate\View\View;
 
 class CourrielController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
-        $courriels = Courriel::incomplete();
+        $status = $request->query('status');
+        $courriels = Courriel::all();
+
+        if ($status !== null) {
+            if ($status) {
+                $courriels = Courriel::lu();
+            } else {
+                $courriels = Courriel::nonLu();
+            }
+        }
+
         return view('courriels.index', ['courriels' => $courriels]);
     }
     public function show($id): View

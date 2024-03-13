@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\CourrielController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +27,7 @@ Route::get('/courriels/{id}', function ($id) {
     $courriel = App\Models\Courriel::find($id);
     return view('courriels.show', ['courriel' => $courriel]);
 });
+
+Route::get('/courriels', [CourrielController::class, 'index']);
 
 Route::get('/courriels/{courriel}', [CourrielController::class, 'show'])->name('courriels.show');

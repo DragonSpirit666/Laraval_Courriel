@@ -21,6 +21,7 @@ class CourrielFactory extends Factory
             'titre' => Str::random(10),
             'envoyeur' => $this->faker->email,
             'contenu' => $this->faker->text,
-            'lu' => $this->faker->boolean,];
+            'lu' => $this->faker->boolean,
+            ];
     }
 }

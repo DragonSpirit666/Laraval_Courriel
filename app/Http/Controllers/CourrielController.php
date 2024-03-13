@@ -6,8 +6,19 @@ use App\Models\Courriel;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
+/**
+ * Contrôleur pour la gestion des courriels.
+ *
+ * @package App\Http\Controllers
+ */
 class CourrielController extends Controller
 {
+    /**
+     * Affiche la liste des courriels en fonction du statut.
+     *
+     * @param Request $request
+     * @return View
+     */
     public function index(Request $request): View
     {
         $status = $request->query('status');
@@ -23,7 +34,14 @@ class CourrielController extends Controller
 
         return view('courriels.index', ['courriels' => $courriels]);
     }
-    public function show($id): View
+
+    /**
+     * Affiche un courriel spécifique.
+     *
+     * @param int $id
+     * @return View
+     */
+    public function show(int $id): View
     {
         $courriel = Courriel::find($id);
         return view('courriels.show', ['courriel' => $courriel]);

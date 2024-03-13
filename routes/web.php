@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourrielController;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +15,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Route pour afficher la vue de bienvenue.
+ *
+ * URL: /
+ * Méthode: GET
+ *
+ * @return View
+ */
 Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Route pour afficher les courriels.
+ *
+ * URL: /courriels
+ * Méthode: GET
+ *
+ * @return View
+ */
 Route::get('/courriels', function () {
     $courriels = App\Models\Courriel::all();
     return view('courriels.index',  ['courriels' => $courriels]);
 });
 
+/**
+ * Route pour afficher un courriel spécifique.
+ *
+ * URL: /courriels/{courriel}
+ * Méthode: GET
+ *
+ * @param  int  $courriel
+ * @return View
+ */
 Route::get('/courriels/{courriel}', [CourrielController::class, 'show'])->name('courriels.show');

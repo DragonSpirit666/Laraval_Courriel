@@ -7,12 +7,11 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="bg-gray-400">
 <x-header>
 </x-header>
 @isset($titre)
-    <h1>{{ $titre }}</h1>
-@endisset
+    <h1>{{ $titre }}</h1>@endisset
 {{ $slot }}
 <x-footer>
 </x-footer>

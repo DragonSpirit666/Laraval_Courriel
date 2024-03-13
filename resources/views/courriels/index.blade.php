@@ -16,7 +16,7 @@
                             <a href="{{ route('courriels.show', $courriel->id) }}">
                             <li class="py-3 sm:py-4">
                                 <div class="flex items-center">
-                                    <div class="flex items-center text-gray-300 w-32">
+                                    <div class="flex items-center text-gray-300 w-24">
                                         @if($courriel->lu)
                                             <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> {{__('courriels.lu')}}
                                         @else

@@ -9,9 +9,6 @@
                 <div class="flow-root">
                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                         @foreach ($courriels as $courriel)
-                            @if($response->status() == $courriel->lu)
-                                <p>lu</p>
-                            @endif
                             <a href="{{ route('courriels.show', $courriel->id) }}">
                             <li class="py-3 sm:py-4">
                                 <div class="flex items-center">

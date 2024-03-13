@@ -7,4 +7,6 @@ return [
         'year' => '2024',
         'company' => 'Cstjean™'
     ],
-    ];
+    'accueil' => 'Accueil',
+    'retour' => 'Retour',
+];

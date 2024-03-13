@@ -4,11 +4,11 @@
     </x-slot>
     <div class="flex justify-center m-7">
         <div class="max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <h5 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white"><span class="font-bold">Sujet: </span>{{ $courriel->titre }}</h5>
-            <h6 class="mb-2 text-lg text-gray-900 dark:text-white"><span class="font-bold">De: </span>{{ $courriel->envoyeur }}</h6>
+            <h5 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white"><span class="font-bold">{{ __('courriels.sujet') }}: </span>{{ $courriel->titre }}</h5>
+            <h6 class="mb-2 text-lg text-gray-900 dark:text-white"><span class="font-bold">{{ __('courriels.de') }}: </span>{{ $courriel->envoyeur }}</h6>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $courriel->contenu }}</p>
             <p class="mb-3 font-normal text-gray-500 dark:text-gray-500">
-                <span class="font-bold">Date: </span>{{ $courriel->created_at->isoFormat('LLLL') }}
+                <span class="font-bold">{{ __('courriels.date') }} : </span>{{ $courriel->created_at->isoFormat('LLLL') }}
             </p>
                 <form method="post" action="{{ route('courriels.update', $courriel->id) }}" class="flex items-center mt-6 space-y-6">
                     @csrf

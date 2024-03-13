@@ -8,8 +8,8 @@
                 </div>
                 <div class="flow-root">
                     <a href="{{ url('/courriels') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{__('courriels.afficher')}}</a>
-                    <a href="{{ url('/courriels?status=0') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{__('courriels.afficher_lus')}}</a>
-                    <a href="{{ url('/courriels?status=1') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{__('courriels.afficher_non_lus')}}</a>
+                    <a href="{{ url('/courriels?status=0') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{__('courriels.afficher_non_lus')}}</a>
+                    <a href="{{ url('/courriels?status=1') }}" type="button" class="text-white bg-purple-900 hover:bg-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{{__('courriels.afficher_lus')}}</a>
 
                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                         @foreach ($courriels as $courriel)
